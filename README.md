@@ -1,1 +1,376 @@
-# yahya-storee
+<!DOCTYPE html>  <html lang="ar" dir="rtl">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>YAHYA STORE | متجر الإكسسوارات</title>  <style>  
+*{  
+    box-sizing:border-box;  
+    margin:0;  
+    padding:0;  
+    font-family:Arial,Tahoma,sans-serif;  
+}  
+  
+body{  
+    background:#080808;  
+    color:white;  
+}  
+  
+header{  
+    background:#0d0d0d;  
+    border-bottom:1px solid #292929;  
+    padding:18px 6%;  
+    display:flex;  
+    align-items:center;  
+    justify-content:space-between;  
+    position:sticky;  
+    top:0;  
+    z-index:100;  
+}  
+  
+.logo{  
+    display:flex;  
+    align-items:center;  
+    gap:12px;  
+}  
+  
+.logo-icon{  
+    width:55px;  
+    height:55px;  
+    border:2px solid #f5b52b;  
+    border-radius:50%;  
+    display:flex;  
+    align-items:center;  
+    justify-content:center;  
+    color:#f5b52b;  
+    font-size:28px;  
+    font-weight:bold;  
+}  
+  
+.logo-text h2{  
+    color:#f5b52b;  
+    font-size:20px;  
+    letter-spacing:2px;  
+}  
+  
+.logo-text p{  
+    color:#aaa;  
+    font-size:12px;  
+}  
+  
+nav{  
+    display:flex;  
+    gap:25px;  
+}  
+  
+nav a{  
+    color:white;  
+    text-decoration:none;  
+    font-size:16px;  
+}  
+  
+nav a:hover{  
+    color:#f5b52b;  
+}  
+  
+.cart{  
+    border:1px solid #f5b52b;  
+    padding:10px 15px;  
+    border-radius:10px;  
+    color:#f5b52b;  
+}  
+  
+.hero{  
+    margin:25px auto;  
+    width:90%;  
+    min-height:350px;  
+    border:1px solid #292929;  
+    border-radius:22px;  
+    background:linear-gradient(100deg,#111,#090909);  
+    display:flex;  
+    align-items:center;  
+    justify-content:center;  
+    text-align:center;  
+    padding:40px;  
+}  
+  
+.hero h1{  
+    font-size:45px;  
+    margin-bottom:15px;  
+}  
+  
+.hero h1 span{  
+    color:#f5b52b;  
+}  
+  
+.hero p{  
+    color:#aaa;  
+    font-size:19px;  
+    margin-bottom:25px;  
+}  
+  
+.btn{  
+    display:inline-block;  
+    background:#f5b52b;  
+    color:#080808;  
+    padding:14px 30px;  
+    border-radius:10px;  
+    text-decoration:none;  
+    font-weight:bold;  
+    border:none;  
+    cursor:pointer;  
+}  
+  
+.section{  
+    width:90%;  
+    margin:45px auto;  
+}  
+  
+.section-title{  
+    font-size:28px;  
+    margin-bottom:25px;  
+}  
+  
+.section-title span{  
+    color:#f5b52b;  
+}  
+  
+.categories{  
+    display:grid;  
+    grid-template-columns:repeat(4,1fr);  
+    gap:15px;  
+}  
+  
+.category{  
+    background:#111;  
+    border:1px solid #292929;  
+    border-radius:15px;  
+    padding:25px 10px;  
+    text-align:center;  
+    transition:.3s;  
+}  
+  
+.category:hover{  
+    border-color:#f5b52b;  
+    transform:translateY(-5px);  
+}  
+  
+.category .icon{  
+    font-size:38px;  
+    margin-bottom:10px;  
+}  
+  
+.products{  
+    display:grid;  
+    grid-template-columns:repeat(4,1fr);  
+    gap:18px;  
+}  
+  
+.product{  
+    background:#111;  
+    border:1px solid #292929;  
+    border-radius:16px;  
+    padding:15px;  
+    transition:.3s;  
+}  
+  
+.product:hover{  
+    transform:translateY(-5px);  
+    border-color:#f5b52b;  
+}  
+  
+.product-img{  
+    height:180px;  
+    background:#181818;  
+    border-radius:12px;  
+    display:flex;  
+    align-items:center;  
+    justify-content:center;  
+    font-size:70px;  
+    margin-bottom:15px;  
+}  
+  
+.product h3{  
+    margin-bottom:8px;  
+}  
+  
+.product p{  
+    color:#999;  
+    font-size:14px;  
+    margin-bottom:12px;  
+}  
+  
+.price{  
+    color:#f5b52b;  
+    font-size:21px;  
+    font-weight:bold;  
+    margin-bottom:12px;  
+}  
+  
+.buy{  
+    width:100%;  
+    padding:11px;  
+    border-radius:9px;  
+    border:1px solid #f5b52b;  
+    background:transparent;  
+    color:#f5b52b;  
+    cursor:pointer;  
+}  
+  
+.buy:hover{  
+    background:#f5b52b;  
+    color:#000;  
+}  
+  
+.contact{  
+    background:#111;  
+    border:1px solid #292929;  
+    border-radius:18px;  
+    padding:30px;  
+    text-align:center;  
+}  
+  
+.whatsapp{  
+    display:inline-block;  
+    margin-top:20px;  
+    background:#25D366;  
+    color:white;  
+    text-decoration:none;  
+    padding:14px 30px;  
+    border-radius:10px;  
+    font-weight:bold;  
+}  
+  
+footer{  
+    text-align:center;  
+    padding:30px;  
+    border-top:1px solid #292929;  
+    color:#777;  
+    margin-top:50px;  
+}  
+  
+@media(max-width:800px){  
+    header{  
+        padding:15px;  
+    }  
+  
+    nav{  
+        display:none;  
+    }  
+  
+    .hero{  
+        min-height:300px;  
+        padding:25px;  
+    }  
+  
+    .hero h1{  
+        font-size:32px;  
+    }  
+  
+    .categories{  
+        grid-template-columns:repeat(2,1fr);  
+    }  
+  
+    .products{  
+        grid-template-columns:repeat(2,1fr);  
+    }  
+  
+    .product-img{  
+        height:130px;  
+        font-size:50px;  
+    }  
+}  
+  
+@media(max-width:450px){  
+    .products{  
+        grid-template-columns:1fr 1fr;  
+        gap:10px;  
+    }  
+  
+    .product{  
+        padding:10px;  
+    }  
+  
+    .product h3{  
+        font-size:14px;  
+    }  
+  
+    .price{  
+        font-size:17px;  
+    }  
+}  
+</style>  </head>  <body>  <header>  <div class="logo">  
+    <div class="logo-icon">M</div>  
+    <div class="logo-text">  
+        <h2>MIMOO</h2>  
+        <p>YAHYA STORE</p>  
+    </div>  
+</div>  <nav>  
+    <a href="#">الرئيسية</a>  
+    <a href="#categories">الأقسام</a>  
+    <a href="#products">المنتجات</a>  
+    <a href="#contact">اتصل بنا</a>  
+</nav>  <div class="cart">  
+    🛒 السلة <span id="count">0</span>  
+</div>  </header>  <section class="hero">  <div>  
+    <h1>مرحبا بك في <span>YAHYA STORE</span> 🛍️</h1>  
+    <p>متجر الإكسسوارات العصرية بأفضل الأسعار</p>  
+    <a href="#products" class="btn">تسوق الآن 🛒</a>  
+</div>  </section>  <section class="section" id="categories">  <h2 class="section-title">الأقسام <span>✦</span></h2>  <div class="categories">  <div class="category">  
+    <div class="icon">🎧</div>  
+    <h3>السماعات</h3>  
+</div>  <div class="category">  
+    <div class="icon">🔌</div>  
+    <h3>الشواحن</h3>  
+</div>  <div class="category">  
+    <div class="icon">📱</div>  
+    <h3>حماية الهاتف</h3>  
+</div>  <div class="category">  
+    <div class="icon">⌚</div>  
+    <h3>الساعات الذكية</h3>  
+</div>  </div>  
+</section>  <section class="section" id="products">  <h2 class="section-title">منتجات مميزة <span>★</span></h2>  <div class="products">  <div class="product">  
+    <div class="product-img">
+  <img src="bracelet1.jpg" alt="سوار ذهبي">
+</div>
+    <h3>سماعة Bluetooth</h3>  
+    <p>صوت نقي وجودة عالية</p>  
+    <div class="price">149 DH</div>  
+    <button class="buy" onclick="addCart()">أضف للسلة 🛒</button>  
+</div>  <div class="product">  
+    <div class="product-img">🔋</div>  
+    <h3>Power Bank 20000mAh</h3>  
+    <p>شحن سريع وعملي</p>  
+    <div class="price">199 DH</div>  
+    <button class="buy" onclick="addCart()">أضف للسلة 🛒</button>  
+</div>  <div class="product">  
+    <div class="product-img">🔌</div>  
+    <h3>شاحن سريع 20W</h3>  
+    <p>شحن سريع وآمن</p>  
+    <div class="price">79 DH</div>  
+    <button class="buy" onclick="addCart()">أضف للسلة 🛒</button>  
+</div>  <div class="product">  
+    <div class="product-img">⌚</div>  
+    <h3>Smart Watch</h3>  
+    <p>ساعة ذكية وعصرية</p>  
+    <div class="price">249 DH</div>  
+    <button class="buy" onclick="addCart()">أضف للسلة 🛒</button>  
+</div>  </div>  
+</section>  <section class="section" id="contact">  <div class="contact">  
+    <h2>باغي تطلب؟ 📦</h2>  
+    <p>تواصل معنا مباشرة عبر WhatsApp</p>  <a class="whatsapp"  
+   href="https://wa.me/212624040690"  
+   target="_blank">  
+   📲 اطلب الآن عبر WhatsApp  
+</a>
+
+</div>  </section>  <footer>  
+    © 2026 YAHYA STORE — MIMOO  
+</footer>  <script>  
+let count = 0;  
+  
+function addCart(){  
+    count++;  
+    document.getElementById("count").innerText = count;  
+    alert("تمت إضافة المنتج إلى السلة 🛒");  
+}  
+</script>  </body>  
+</html>
