@@ -177,16 +177,23 @@ nav a:hover{
     border-color:#f5b52b;  
 }  
   
-.product-img{  
-    height:180px;  
-    background:#181818;  
-    border-radius:12px;  
-    display:flex;  
-    align-items:center;  
-    justify-content:center;  
-    font-size:70px;  
-    margin-bottom:15px;  
-}  
+.product-img{
+    height:180px;
+    background:#181818;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    margin-bottom:15px;
+}
+
+.product-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
   
 .product h3{  
     margin-bottom:8px;  
