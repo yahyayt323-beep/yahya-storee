@@ -1,1242 +1,610 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-<title>YAHYA STORE | MIMOO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+  <title>YAHYA STORE | MIMOO - متجر إلكتروني</title>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Tahoma,sans-serif;
-}
+  <meta name="description"
+        content="YAHYA STORE - MIMOO متجر إلكتروني لبيع الإكسسوارات النسائية الأنيقة في المغرب. اكتشف منتجاتنا واطلب بسهولة عبر واتساب.">
 
-html{
-    scroll-behavior:smooth;
-}
+  <meta name="robots" content="index, follow">
 
-body{
-    background:#080808;
-    color:#fff;
-}
+  <link rel="canonical" href="https://yayt323-beep.github.io/">
 
-/* ================= HEADER ================= */
+  <!-- Open Graph -->
+  <meta property="og:title" content="YAHYA STORE | MIMOO">
+  <meta property="og:description"
+        content="متجر YAHYA STORE - MIMOO للإكسسوارات النسائية الأنيقة">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yayt323-beep.github.io/">
 
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
+  <style>
 
-    background:#0d0d0d;
-    border-bottom:1px solid #292929;
-
-    padding:14px 5%;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.logo-icon{
-    width:58px;
-    height:58px;
-
-    border:2px solid #f5b52b;
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    color:#f5b52b;
-    font-size:30px;
-    font-weight:bold;
-}
-
-.logo-text h2{
-    color:#f5b52b;
-    font-size:23px;
-    letter-spacing:2px;
-}
-
-.logo-text p{
-    color:#999;
-    font-size:12px;
-    margin-top:3px;
-}
-
-.cart-button{
-    background:transparent;
-    border:1px solid #f5b52b;
-    color:#f5b52b;
-
-    padding:12px 18px;
-    border-radius:10px;
-
-    cursor:pointer;
-    font-size:15px;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    width:92%;
-    max-width:1200px;
-
-    min-height:370px;
-
-    margin:30px auto;
-
-    padding:40px 20px;
-
-    border:1px solid #292929;
-    border-radius:25px;
-
-    background:linear-gradient(135deg,#151515,#090909);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-}
-
-.hero h1{
-    font-size:43px;
-    line-height:1.5;
-}
-
-.hero h1 span{
-    color:#f5b52b;
-}
-
-.hero-icon{
-    font-size:55px;
-    margin:15px;
-}
-
-.hero p{
-    color:#aaa;
-    font-size:19px;
-    margin-bottom:25px;
-}
-
-.btn{
-    display:inline-block;
-
-    background:#f5b52b;
-    color:#080808;
-
-    padding:15px 35px;
-
-    border-radius:12px;
-
-    text-decoration:none;
-
-    font-weight:bold;
-    font-size:18px;
-}
-
-/* ================= PRODUCTS ================= */
-
-.section{
-    width:92%;
-    max-width:1200px;
-
-    margin:55px auto;
-}
-
-.section-title{
-    font-size:32px;
-    margin-bottom:30px;
-}
-
-.section-title span{
-    color:#f5b52b;
-}
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-}
-
-.product{
-    background:#111;
-
-    border:1px solid #292929;
-    border-radius:20px;
-
-    padding:15px;
-
-    transition:.3s;
-}
-
-.product:hover{
-    border-color:#f5b52b;
-    transform:translateY(-4px);
-}
-
-.product-img{
-    width:100%;
-    height:300px;
-
-    background:#181818;
-
-    border-radius:15px;
-
-    overflow:hidden;
-
-    margin-bottom:15px;
-}
-
-.product-img img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-}
-
-.product h3{
-    font-size:20px;
-    margin-bottom:10px;
-}
-
-.product p{
-    color:#999;
-
-    line-height:1.8;
-    font-size:15px;
-
-    min-height:55px;
-}
-
-.price{
-    color:#f5b52b;
-
-    font-size:24px;
-    font-weight:bold;
-
-    margin:15px 0;
-}
-
-.buy{
-    width:100%;
-
-    padding:13px;
-
-    border:1px solid #f5b52b;
-    border-radius:10px;
-
-    background:transparent;
-    color:#f5b52b;
-
-    cursor:pointer;
-
-    font-size:15px;
-    font-weight:bold;
-}
-
-.buy:hover{
-    background:#f5b52b;
-    color:#000;
-}
-
-/* ================= CART MODAL ================= */
-
-.modal{
-    display:none;
-
-    position:fixed;
-    z-index:2000;
-
-    left:0;
-    top:0;
-
-    width:100%;
-    height:100%;
-
-    background:rgba(0,0,0,.85);
-
-    overflow:auto;
-
-    padding:20px;
-}
-
-.modal-box{
-    background:#111;
-
-    border:1px solid #333;
-    border-radius:20px;
-
-    width:100%;
-    max-width:600px;
-
-    margin:30px auto;
-
-    padding:25px;
-}
-
-.modal-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    margin-bottom:20px;
-}
-
-.modal-header h2{
-    color:#f5b52b;
-}
-
-.close{
-    background:none;
-    border:none;
-
-    color:#fff;
-
-    font-size:30px;
-
-    cursor:pointer;
-}
-
-/* ================= CART ITEMS ================= */
-
-.cart-item{
-    background:#181818;
-
-    border:1px solid #292929;
-
-    border-radius:12px;
-
-    padding:15px;
-
-    margin-bottom:12px;
-}
-
-.cart-item-top{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-}
-
-.cart-item h3{
-    font-size:16px;
-}
-
-.cart-price{
-    color:#f5b52b;
-    font-weight:bold;
-}
-
-.quantity{
-    display:flex;
-    align-items:center;
-    gap:10px;
-
-    margin-top:12px;
-}
-
-.quantity button{
-    width:32px;
-    height:32px;
-
-    border:1px solid #f5b52b;
-    background:transparent;
-
-    color:#f5b52b;
-
-    border-radius:7px;
-
-    cursor:pointer;
-}
-
-.remove{
-    background:#8b0000 !important;
-    border-color:#8b0000 !important;
-    color:#fff !important;
-}
-
-/* ================= TOTAL ================= */
-
-.total{
-    border-top:1px solid #333;
-
-    margin-top:20px;
-    padding-top:20px;
-
-    display:flex;
-    justify-content:space-between;
-
-    font-size:21px;
-    font-weight:bold;
-}
-
-.total span{
-    color:#f5b52b;
-}
-
-/* ================= FORM ================= */
-
-.form-title{
-    margin-top:30px;
-    margin-bottom:15px;
-
-    color:#f5b52b;
-}
-
-.form-group{
-    margin-bottom:15px;
-}
-
-.form-group label{
-    display:block;
-
-    margin-bottom:7px;
-
-    color:#ddd;
-}
-
-.form-group input,
-.form-group textarea{
-    width:100%;
-
-    padding:13px;
-
-    background:#080808;
-
-    border:1px solid #333;
-    border-radius:9px;
-
-    color:#fff;
-
-    font-size:15px;
-
-    outline:none;
-}
-
-.form-group input:focus,
-.form-group textarea:focus{
-    border-color:#f5b52b;
-}
-
-.form-group textarea{
-    height:90px;
-    resize:none;
-}
-
-.order-button{
-    width:100%;
-
-    margin-top:10px;
-
-    padding:15px;
-
-    background:#25D366;
-
-    border:none;
-    border-radius:10px;
-
-    color:white;
-
-    font-size:17px;
-    font-weight:bold;
-
-    cursor:pointer;
-}
-
-/* ================= CONTACT ================= */
-
-.contact{
-    text-align:center;
-
-    background:#111;
-
-    border:1px solid #292929;
-
-    border-radius:20px;
-
-    padding:30px;
-}
-
-.whatsapp{
-    display:inline-block;
-
-    margin-top:20px;
-
-    background:#25D366;
-
-    color:#fff;
-
-    text-decoration:none;
-
-    padding:14px 25px;
-
-    border-radius:10px;
-
-    font-weight:bold;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    text-align:center;
-
-    color:#777;
-
-    border-top:1px solid #292929;
-
-    padding:30px;
-
-    margin-top:50px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:700px){
-
-    header{
-        padding:12px 18px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .logo-icon{
-        width:52px;
-        height:52px;
-        font-size:27px;
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b0b0b;
+      color: white;
+      line-height: 1.6;
     }
 
-    .logo-text h2{
-        font-size:19px;
+    header {
+      background: #000;
+      border-bottom: 1px solid #f5b52b;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    .logo-text p{
-        font-size:11px;
+    .header-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .cart-button{
-        padding:10px 13px;
-        font-size:13px;
+    .logo {
+      color: #f5b52b;
+      font-size: 24px;
+      font-weight: bold;
     }
 
-    .hero{
-        min-height:350px;
+    .store-name {
+      font-size: 12px;
+      color: white;
+      opacity: 0.8;
     }
 
-    .hero h1{
-        font-size:31px;
+    .cart {
+      background: #f5b52b;
+      color: #000;
+      padding: 8px 14px;
+      border-radius: 25px;
+      font-weight: bold;
     }
 
-    .hero p{
-        font-size:16px;
+    .hero {
+      text-align: center;
+      padding: 70px 20px;
+      background:
+        radial-gradient(circle at center, #2b210c 0%, #0b0b0b 60%);
     }
 
-    .products{
-        grid-template-columns:repeat(2,1fr);
-        gap:12px;
+    .hero h1 {
+      color: #f5b52b;
+      font-size: 38px;
+      margin-bottom: 15px;
     }
 
-    .product{
-        padding:10px;
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+      color: #ddd;
     }
 
-    .product-img{
-        height:210px;
+    .btn {
+      display: inline-block;
+      background: #f5b52b;
+      color: #000;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
-    .product h3{
-        font-size:15px;
+    .btn:hover {
+      transform: scale(1.04);
     }
 
-    .product p{
-        font-size:12px;
+    .products {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 20px;
     }
 
-    .price{
-        font-size:19px;
+    .section-title {
+      text-align: center;
+      color: #f5b52b;
+      font-size: 30px;
+      margin-bottom: 35px;
     }
 
-    .buy{
-        font-size:13px;
-        padding:11px 5px;
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
     }
 
-}
+    .product {
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+    }
 
-</style>
+    .product:hover {
+      border-color: #f5b52b;
+      transform: translateY(-4px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      background: #222;
+    }
+
+    .product-info {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product h3 {
+      color: #f5b52b;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .product p {
+      color: #ccc;
+      margin-bottom: 15px;
+      flex: 1;
+    }
+
+    .price {
+      font-size: 22px;
+      color: white;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .order {
+      max-width: 700px;
+      margin: 20px auto 60px;
+      padding: 30px 20px;
+    }
+
+    .order-box {
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 15px;
+      padding: 25px;
+    }
+
+    .order-box label {
+      display: block;
+      margin-bottom: 7px;
+      color: #f5b52b;
+      font-weight: bold;
+    }
+
+    .order-box input,
+    .order-box select,
+    .order-box textarea {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 18px;
+      border: 1px solid #444;
+      border-radius: 8px;
+      background: #080808;
+      color: white;
+      font-size: 16px;
+    }
+
+    .order-box textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 25px 15px;
+      border-top: 1px solid #333;
+      color: #aaa;
+    }
+
+    footer strong {
+      color: #f5b52b;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #25D366;
+      color: white;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 27px;
+      z-index: 2000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    @media (max-width: 600px) {
+
+      .hero {
+        padding: 55px 15px;
+      }
+
+      .hero h1 {
+        font-size: 29px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .products {
+        padding: 40px 12px;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product img {
+        height: 320px;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+    }
+
+  </style>
 </head>
-
 
 <body>
 
-
-<!-- ================= HEADER ================= -->
-
 <header>
 
-    <div class="logo">
+  <div class="header-container">
 
-        <div class="logo-icon">
-            M
-        </div>
-
-        <div class="logo-text">
-
-            <h2>MIMOO</h2>
-
-            <p>YAHYA STORE</p>
-
-        </div>
-
+    <div>
+      <div class="logo">MIMOO</div>
+      <div class="store-name">YAHYA STORE</div>
     </div>
 
+    <div class="cart">
+      🛒 <span id="cartCount">0</span>
+    </div>
 
-    <button
-        class="cart-button"
-        onclick="openCart()"
-    >
-        🛒 السلة
-        <span id="count">0</span>
-    </button>
+  </div>
 
 </header>
 
 
-
-<!-- ================= HERO ================= -->
-
 <section class="hero">
 
-    <div>
+  <h1>مرحبا بك في YAHYA STORE 🛍️</h1>
 
-        <h1>
-            مرحبا بك في
-            <span>YAHYA STORE</span>
-        </h1>
+  <p>
+    اكتشف الإكسسوارات الأنيقة واختر ما يناسبك
+  </p>
 
-        <div class="hero-icon">
-            🛍️
-        </div>
-
-        <p>
-            متجر الإكسسوارات العصرية بأفضل الأسعار
-        </p>
-
-        <a
-            href="#products"
-            class="btn"
-        >
-            🛒 تسوق الآن
-        </a>
-
-    </div>
+  <a href="#products" class="btn">
+    اكتشف المنتجات
+  </a>
 
 </section>
 
 
+<section class="products" id="products">
 
-<!-- ================= PRODUCTS ================= -->
+  <h2 class="section-title">
+    منتجاتنا ✨
+  </h2>
 
-<section
-    class="section"
-    id="products"
->
-
-    <h2 class="section-title">
-        ⭐ منتجات مميزة
-    </h2>
+  <div class="products-grid">
 
 
-    <div class="products">
+    <!-- PRODUCT 1 -->
 
+    <div class="product">
 
-        <!-- PRODUCT 1 -->
+      <img
+        src="IMG-20260921-WA0017.jpg"
+        alt="سوار نسائي فاخر من YAHYA STORE"
+        loading="lazy"
+      >
 
-        <div class="product">
+      <div class="product-info">
 
-            <div class="product-img">
-
-                <img
-                    src="IMG-20260921-WA0017.jpg"
-                    alt="سوار أنيق مزين بالأحجار"
-                >
-
-            </div>
-
-
-            <h3>
-                سوار أنيق مزين بالأحجار 💎
-            </h3>
-
-
-            <p>
-                سوار أنيق بتصميم راقي ولمسة فاخرة
-                وتفاصيل لامعة، مناسب للاستعمال اليومي
-                والمناسبات والهدايا.
-            </p>
-
-
-            <div class="price">
-                120 DH
-            </div>
-
-
-            <button
-                class="buy"
-                onclick="addToCart(
-                    'سوار أنيق مزين بالأحجار 💎',
-                    120
-                )"
-            >
-                🛒 أضف للسلة
-            </button>
-
-        </div>
-
-
-
-        <!-- PRODUCT 2 -->
-
-        <div class="product">
-
-            <div class="product-img">
-
-                <img
-                    src="IMG-20260923-WA0000.jpg"
-                    alt="سوار نسائي فاخر"
-                >
-
-            </div>
-
-
-            <h3>
-                سوار نسائي فاخر ✨
-            </h3>
-
-
-            <p>
-                سوار أنيق بتصميم عصري، مناسب للهدايا
-                والاستعمال اليومي.
-            </p>
-
-
-            <div class="price">
-                120 DH
-            </div>
-
-
-            <button
-                class="buy"
-                onclick="addToCart(
-                    'سوار نسائي فاخر ✨',
-                    120
-                )"
-            >
-                🛒 أضف للسلة
-            </button>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= CART ================= -->
-
-<div
-    class="modal"
-    id="cartModal"
->
-
-    <div class="modal-box">
-
-        <div class="modal-header">
-
-            <h2>
-                🛒 سلة المشتريات
-            </h2>
-
-            <button
-                class="close"
-                onclick="closeCart()"
-            >
-                ×
-            </button>
-
-        </div>
-
-
-        <div id="cartItems"></div>
-
-
-        <div class="total">
-
-            <span>
-                المجموع:
-            </span>
-
-            <span>
-                <span id="total">0</span> DH
-            </span>
-
-        </div>
-
-
-        <!-- CUSTOMER FORM -->
-
-        <h3 class="form-title">
-            📦 معلومات التوصيل
+        <h3>
+          سوار نسائي فاخر ✨
         </h3>
 
-
-        <div class="form-group">
-
-            <label>
-                الاسم الكامل
-            </label>
-
-            <input
-                type="text"
-                id="customerName"
-                placeholder="مثال: محمد العلوي"
-            >
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>
-                رقم الهاتف
-            </label>
-
-            <input
-                type="tel"
-                id="customerPhone"
-                placeholder="مثال: 0612345678"
-            >
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>
-                المدينة
-            </label>
-
-            <input
-                type="text"
-                id="customerCity"
-                placeholder="مثال: الدار البيضاء"
-            >
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>
-                العنوان بالتفصيل
-            </label>
-
-            <textarea
-                id="customerAddress"
-                placeholder="الحي، الشارع، رقم المنزل..."
-            ></textarea>
-
-        </div>
-
-
-        <button
-            class="order-button"
-            onclick="sendOrder()"
-        >
-            📲 إرسال الطلب عبر WhatsApp
-        </button>
-
-    </div>
-
-</div>
-
-
-
-<!-- ================= CONTACT ================= -->
-
-<section class="section">
-
-    <div class="contact">
-
-        <h2>
-            باغي تتواصل معنا؟ 📞
-        </h2>
-
         <p>
-            تقدر تتواصل معنا مباشرة عبر WhatsApp
+          سوار أنيق بتصميم جميل مناسب للاستعمال اليومي والمناسبات.
         </p>
 
+        <div class="price">
+          120 DH
+        </div>
 
-        <a
-            class="whatsapp"
-            href="https://wa.me/212624040690"
-            target="_blank"
-        >
-            📲 WhatsApp
-        </a>
+        <button
+          class="btn"
+          onclick="selectProduct('سوار نسائي فاخر', 120)">
+          اطلب الآن
+        </button>
+
+      </div>
 
     </div>
+
+
+    <!-- PRODUCT 2 -->
+
+    <div class="product">
+
+      <img
+        src="IMG-20260923-WA0000.jpg"
+        alt="سوار أنيق مزين بالأحجار"
+        loading="lazy"
+      >
+
+      <div class="product-info">
+
+        <h3>
+          سوار أنيق مزين بالأحجار 💎
+        </h3>
+
+        <p>
+          تصميم أنيق ومميز، مناسب كهدية أو للاستعمال الشخصي.
+        </p>
+
+        <div class="price">
+          120 DH
+        </div>
+
+        <button
+          class="btn"
+          onclick="selectProduct('سوار أنيق مزين بالأحجار', 120)">
+          اطلب الآن
+        </button>
+
+      </div>
+
+    </div>
+
+
+  </div>
 
 </section>
 
 
+<section class="order" id="order">
 
-<!-- ================= FOOTER ================= -->
+  <h2 class="section-title">
+    إتمام الطلب 🛒
+  </h2>
+
+  <div class="order-box">
+
+    <form id="orderForm">
+
+      <label>الاسم الكامل</label>
+
+      <input
+        type="text"
+        id="name"
+        placeholder="مثال: محمد العلوي"
+        required
+      >
+
+
+      <label>رقم الهاتف</label>
+
+      <input
+        type="tel"
+        id="phone"
+        placeholder="06XXXXXXXX"
+        required
+      >
+
+
+      <label>المدينة</label>
+
+      <input
+        type="text"
+        id="city"
+        placeholder="مثال: الدار البيضاء"
+        required
+      >
+
+
+      <label>العنوان</label>
+
+      <textarea
+        id="address"
+        placeholder="أدخل العنوان بالتفصيل"
+        required
+      ></textarea>
+
+
+      <label>المنتج</label>
+
+      <select id="product" required>
+
+        <option value="">
+          اختر المنتج
+        </option>
+
+        <option value="سوار نسائي فاخر - 120 DH">
+          سوار نسائي فاخر - 120 DH
+        </option>
+
+        <option value="سوار أنيق مزين بالأحجار - 120 DH">
+          سوار أنيق مزين بالأحجار - 120 DH
+        </option>
+
+      </select>
+
+
+      <label>الكمية</label>
+
+      <input
+        type="number"
+        id="quantity"
+        min="1"
+        value="1"
+        required
+      >
+
+
+      <label>ملاحظات إضافية</label>
+
+      <textarea
+        id="notes"
+        placeholder="مثال: أريد التوصيل في المساء"
+      ></textarea>
+
+
+      <button
+        type="submit"
+        class="btn"
+        style="width:100%;">
+        📲 إرسال الطلب عبر WhatsApp
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
 
 <footer>
 
-    © 2026 YAHYA STORE — MIMOO
+  <p>
+    © 2026 <strong>YAHYA STORE</strong>
+  </p>
+
+  <p>
+    MIMOO - جميع الحقوق محفوظة
+  </p>
 
 </footer>
 
 
+<a
+  class="whatsapp"
+  href="https://wa.me/212624040690"
+  target="_blank"
+  aria-label="تواصل معنا عبر واتساب">
+  ☎
+</a>
+
 
 <script>
 
-/* =========================================
-   CART SYSTEM
-========================================= */
+  let cartCount = 0;
 
-let cart = [];
+  function selectProduct(productName, price) {
 
+    document.getElementById("product").value =
+      productName + " - " + price + " DH";
 
-/* ADD PRODUCT */
+    document.getElementById("cartCount").textContent = 1;
 
-function addToCart(name, price){
-
-    const existingProduct =
-        cart.find(product => product.name === name);
-
-    if(existingProduct){
-
-        existingProduct.quantity++;
-
-    }else{
-
-        cart.push({
-
-            name: name,
-            price: price,
-            quantity: 1
-
-        });
-
-    }
-
-    updateCart();
-
-    alert("تمت إضافة المنتج إلى السلة 🛒");
-}
-
-
-/* UPDATE CART */
-
-function updateCart(){
-
-    const countElement =
-        document.getElementById("count");
-
-    const cartItems =
-        document.getElementById("cartItems");
-
-    const totalElement =
-        document.getElementById("total");
-
-
-    let totalQuantity = 0;
-    let totalPrice = 0;
-
-
-    cart.forEach(product => {
-
-        totalQuantity += product.quantity;
-
-        totalPrice +=
-            product.price * product.quantity;
-
+    document.getElementById("order").scrollIntoView({
+      behavior: "smooth"
     });
 
+  }
 
-    countElement.innerText = totalQuantity;
 
-    totalElement.innerText = totalPrice;
+  document
+    .getElementById("orderForm")
+    .addEventListener("submit", function(event) {
 
+      event.preventDefault();
 
-    cartItems.innerHTML = "";
+      const name =
+        document.getElementById("name").value;
 
+      const phone =
+        document.getElementById("phone").value;
 
-    if(cart.length === 0){
+      const city =
+        document.getElementById("city").value;
 
-        cartItems.innerHTML =
+      const address =
+        document.getElementById("address").value;
 
-            `<p style="
-                text-align:center;
-                color:#999;
-                padding:20px;
-            ">
-                السلة فارغة 🛒
-            </p>`;
+      const product =
+        document.getElementById("product").value;
 
-        return;
-    }
+      const quantity =
+        document.getElementById("quantity").value;
 
+      const notes =
+        document.getElementById("notes").value;
 
-    cart.forEach((product,index) => {
 
-        const item = document.createElement("div");
-
-        item.className = "cart-item";
-
-
-        item.innerHTML = `
-
-            <div class="cart-item-top">
-
-                <h3>
-                    ${product.name}
-                </h3>
-
-                <div class="cart-price">
-                    ${product.price * product.quantity} DH
-                </div>
-
-            </div>
-
-
-            <div class="quantity">
-
-                <button
-                    onclick="changeQuantity(${index},1)"
-                >
-                    +
-                </button>
-
-                <span>
-                    ${product.quantity}
-                </span>
-
-                <button
-                    onclick="changeQuantity(${index},-1)"
-                >
-                    -
-                </button>
-
-                <button
-                    class="remove"
-                    onclick="removeProduct(${index})"
-                >
-                    🗑️
-                </button>
-
-            </div>
-
-        `;
-
-
-        cartItems.appendChild(item);
-
-    });
-
-}
-
-
-/* CHANGE QUANTITY */
-
-function changeQuantity(index,change){
-
-    cart[index].quantity += change;
-
-
-    if(cart[index].quantity <= 0){
-
-        cart.splice(index,1);
-
-    }
-
-
-    updateCart();
-
-}
-
-
-/* REMOVE PRODUCT */
-
-function removeProduct(index){
-
-    cart.splice(index,1);
-
-    updateCart();
-
-}
-
-
-/* OPEN CART */
-
-function openCart(){
-
-    document.getElementById("cartModal").style.display =
-        "block";
-
-}
-
-
-/* CLOSE CART */
-
-function closeCart(){
-
-    document.getElementById("cartModal").style.display =
-        "none";
-
-}
-
-
-/* CLOSE WHEN CLICK OUTSIDE */
-
-window.onclick = function(event){
-
-    const modal =
-        document.getElementById("cartModal");
-
-    if(event.target === modal){
-
-        closeCart();
-
-    }
-
-}
-
-
-/* =========================================
-   SEND ORDER TO WHATSAPP
-========================================= */
-
-function sendOrder(){
-
-    if(cart.length === 0){
-
-        alert("السلة فارغة 🛒");
-
-        return;
-
-    }
-
-
-    const name =
-        document.getElementById("customerName").value.trim();
-
-    const phone =
-        document.getElementById("customerPhone").value.trim();
-
-    const city =
-        document.getElementById("customerCity").value.trim();
-
-    const address =
-        document.getElementById("customerAddress").value.trim();
-
-
-    if(!name || !phone || !city || !address){
-
-        alert(
-            "المرجو إدخال جميع معلومات التوصيل 📦"
-        );
-
-        return;
-
-    }
-
-
-    let total = 0;
-
-    let productsText = "";
-
-
-    cart.forEach(product => {
-
-        const productTotal =
-            product.price * product.quantity;
-
-        total += productTotal;
-
-
-        productsText +=
-            "• " +
-            product.name +
-            " × " +
-            product.quantity +
-            " = " +
-            productTotal +
-            " DH\n";
-
-    });
-
-
-    const message =
-
-`🛒 طلب جديد من YAHYA STORE
+      const message =
+`🛍️ طلب جديد من YAHYA STORE
 
 👤 الاسم:
 ${name}
 
-📞 رقم الهاتف:
+📱 الهاتف:
 ${phone}
 
-🏙️ المدينة:
+📍 المدينة:
 ${city}
 
-📍 العنوان:
+🏠 العنوان:
 ${address}
 
-📦 المنتجات:
-${productsText}
+🛒 المنتج:
+${product}
 
-💰 المجموع:
-${total} DH
+🔢 الكمية:
+${quantity}
 
-شكراً لثقتكم في YAHYA STORE ❤️`;
+📝 ملاحظات:
+${notes || "لا توجد"}
+
+شكراً لكم ❤️`;
 
 
-    const whatsappNumber =
-        "212624040690";
-
-
-    const whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
+      const whatsappURL =
+        "https://wa.me/212624040690?text=" +
         encodeURIComponent(message);
 
 
-    window.open(
-        whatsappURL,
-        "_blank"
-    );
+      window.open(whatsappURL, "_blank");
 
-}
+    });
 
 </script>
-
 
 </body>
 </html>
