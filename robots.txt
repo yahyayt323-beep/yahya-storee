@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yayt323-beep.github.io/sitemap.xml
